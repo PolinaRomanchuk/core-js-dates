@@ -247,7 +247,7 @@ function getWeekNumberByDate(date) {
 function getNextFridayThe13th(date) {
   const copyDate = new Date(date);
   copyDate.setDate(copyDate.getDate() + 1);
-  while (true) {
+  while (copyDate.getMonth() <= 11) {
     copyDate.setDate(13);
 
     if (copyDate.getDay() === 5) {
@@ -255,6 +255,7 @@ function getNextFridayThe13th(date) {
     }
     copyDate.setMonth(copyDate.getMonth() + 1);
   }
+  return 1;
 }
 
 /**
